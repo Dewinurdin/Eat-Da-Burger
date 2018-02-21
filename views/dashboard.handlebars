@@ -1,0 +1,35 @@
+
+
+<h2>I am the Dashboard </h2>
+
+{{!-- Show the devoured --}}
+
+{{#each users}}
+
+	{{#if devoured}}
+		<h2>This is the Devoured ones</h2>
+		<p> {{name}} </p>
+
+
+		{{else}}
+			<h2>This is the unDevoured ones</h2>
+			<p> {{name}} </p>
+
+
+	{{/if}}
+
+{{/each}}
+
+
+{{!-- Show the undevoured --}}
+
+{{!-- {{#each users}}
+	
+	{{#unless devoured}}
+		<h2>I am the Undevoured ones</h2>
+		<p> {{name}} <span>{{devoured}}</span></p>
+	{{/unless}}
+	
+
+
+{{/each}} --}}
