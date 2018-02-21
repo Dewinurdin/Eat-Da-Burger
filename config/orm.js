@@ -1,4 +1,4 @@
-var connection = require("./connection.js");
+let connection = require("./connection.js");
 // The above helper function loops through and creates 
 //an array of question marks - ["?", "?", "?"] - and turns it into a string.
 // ["?", "?", "?"].toString() => "?,?,?";
@@ -31,10 +31,10 @@ function objToSql(ob){
 	 return arr.toString();
 };
 
-var orm = {
+let orm = {
 	//Function that returns all table entries
 	selectAll: function(input, cb){
-		var queryString = "SELECT * FROM " + input + ";";
+		let queryString = "SELECT * FROM " + input + ";";
 		connection.query(queryString, (err, res) => {
 			if (err){
 				throw err;
@@ -45,7 +45,7 @@ var orm = {
 
 	//Function that insert single table entry
 	insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+    let queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += cols.toString();
@@ -66,7 +66,7 @@ var orm = {
   },
 	//Function that update single table entry
 	updateOne: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+    let queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
